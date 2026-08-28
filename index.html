@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>QADAM - Online Do'kon</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="header">
 
@@ -29,7 +36,9 @@
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
@@ -47,7 +56,8 @@
 
         <p>
             QADAM — sifatli va zamonaviy mahsulotlarni
-            qulay narxda xarid qilishingiz mumkin bo‘lgan online do‘kon.
+            qulay narxda xarid qilishingiz mumkin bo‘lgan
+            online do‘kon.
         </p>
 
         <a href="#products" class="hero-btn">
@@ -59,7 +69,9 @@
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
 <section class="products-section" id="products">
 
@@ -80,10 +92,10 @@
 
     <div class="cart-box">
 
-        <span>
+        <div>
             🛒 Savat:
             <span id="cart-count">0</span> ta
-        </span>
+        </div>
 
         <button id="open-cart" type="button">
             Savatni ko‘rish
@@ -110,41 +122,41 @@
     <div class="category-box">
 
         <button
+            type="button"
             class="category-btn active"
             data-category="all"
-            type="button"
         >
             Barchasi
         </button>
 
         <button
+            type="button"
             class="category-btn"
             data-category="Elektronika"
-            type="button"
         >
             📱 Elektronika
         </button>
 
         <button
+            type="button"
             class="category-btn"
             data-category="Kiyim"
-            type="button"
         >
             👕 Kiyim
         </button>
 
         <button
+            type="button"
             class="category-btn"
             data-category="Aksessuar"
-            type="button"
         >
             🎧 Aksessuar
         </button>
 
         <button
+            type="button"
             class="category-btn"
             data-category="Uy"
-            type="button"
         >
             🏠 Uy
         </button>
@@ -162,13 +174,22 @@
 </section>
 
 
-<!-- SAVAT MODAL -->
+<!-- =========================
+     SAVAT MODAL
+========================= -->
 
-<div id="cart-modal" class="cart-modal">
+<div
+    id="cart-modal"
+    class="modal"
+>
 
-    <div class="cart-content">
+    <div class="modal-content">
 
-        <button id="close-cart" type="button">
+        <button
+            id="close-cart"
+            class="close-btn"
+            type="button"
+        >
             ✕
         </button>
 
@@ -176,16 +197,25 @@
             🛒 Mening savatim
         </h2>
 
-        <div id="cart-items">
-            Savat hozircha bo‘sh.
+        <div id="cart-items"></div>
+
+        <div class="cart-total-box">
+
+            <strong>
+                Jami:
+            </strong>
+
+            <span id="cart-total">
+                0 so'm
+            </span>
+
         </div>
 
-        <h3>
-            Jami:
-            <span id="cart-total">0 so'm</span>
-        </h3>
-
-        <button id="checkout-btn" type="button">
+        <button
+            id="checkout-btn"
+            class="main-btn"
+            type="button"
+        >
             🛍️ Buyurtma berish
         </button>
 
@@ -194,14 +224,78 @@
 </div>
 
 
-<!-- BUYURTMA MODAL -->
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
 
-<div id="checkout-modal" class="cart-modal">
+<div
+    id="product-modal"
+    class="modal"
+>
 
-    <div class="cart-content checkout-content">
+    <div class="product-modal-content">
 
-        <button id="close-checkout" type="button">
-            ×
+        <button
+            id="close-product-modal"
+            class="close-btn"
+            type="button"
+        >
+            ✕
+        </button>
+
+        <img
+            id="modal-product-image"
+            src=""
+            alt="Mahsulot"
+        >
+
+        <div class="modal-product-info">
+
+            <span id="modal-product-category">
+            </span>
+
+            <h2 id="modal-product-name">
+            </h2>
+
+            <p id="modal-product-price">
+            </p>
+
+            <p id="modal-product-description">
+                Sifatli va zamonaviy mahsulot.
+            </p>
+
+            <button
+                id="modal-add-cart"
+                class="main-btn"
+                type="button"
+            >
+                🛒 Savatga qo‘shish
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CHECKOUT MODAL
+========================= -->
+
+<div
+    id="checkout-modal"
+    class="modal"
+>
+
+    <div class="modal-content checkout-content">
+
+        <button
+            id="close-checkout"
+            class="close-btn"
+            type="button"
+        >
+            ✕
         </button>
 
         <h2>
@@ -249,7 +343,10 @@
                 To‘lov usuli
             </label>
 
-            <select id="payment-method" required>
+            <select
+                id="payment-method"
+                required
+            >
 
                 <option value="">
                     Tanlang
@@ -277,6 +374,7 @@
             <button
                 type="submit"
                 id="confirm-order"
+                class="main-btn"
             >
                 ✅ Buyurtmani tasdiqlash
             </button>
@@ -288,7 +386,9 @@
 </div>
 
 
-<!-- BIZ HAQIMIZDA -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="about" id="about">
 
@@ -318,7 +418,8 @@
             </h3>
 
             <p>
-                Buyurtmalaringizni tez va ishonchli yetkazamiz.
+                Buyurtmalaringizni tez va ishonchli
+                yetkazamiz.
             </p>
 
         </div>
@@ -335,7 +436,8 @@
             </h3>
 
             <p>
-                Siz uchun qulay to‘lov usullaridan foydalaning.
+                Siz uchun qulay to‘lov usullaridan
+                foydalaning.
             </p>
 
         </div>
@@ -362,7 +464,9 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
