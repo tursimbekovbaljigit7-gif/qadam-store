@@ -665,3 +665,102 @@ footer p {
         font-size: 15px;
     }
 }
+/* ================================
+   22-QADAM — PROFESSIONAL PRODUCT CARDS
+================================ */
+
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+.product-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-category {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+}
+
+.product-info h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 14px;
+}
+
+.product-info button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.product-info button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* 📱 Telefon */
+@media (max-width: 768px) {
+
+    .product-card img {
+        height: 200px;
+    }
+
+    .product-info {
+        padding: 14px;
+    }
+
+    .product-info h3 {
+        font-size: 17px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+}
+
+/* 📱 Kichik telefon */
+@media (max-width: 480px) {
+
+    .product-card img {
+        height: 220px;
+    }
+}
