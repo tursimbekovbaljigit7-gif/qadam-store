@@ -29,6 +29,8 @@
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero" id="home">
 
     <div class="hero-text">
@@ -57,6 +59,8 @@
 </section>
 
 
+<!-- PRODUCTS -->
+
 <section class="products-section" id="products">
 
     <div class="section-header">
@@ -76,138 +80,14 @@
 
     <div class="cart-box">
 
-        🛒 Savat:
-        <span id="cart-count">0</span> ta
+        <span>
+            🛒 Savat:
+            <span id="cart-count">0</span> ta
+        </span>
 
         <button id="open-cart" type="button">
             Savatni ko‘rish
         </button>
-
-    </div>
-
-
-    <!-- SAVAT MODAL -->
-
-    <div id="cart-modal" class="cart-modal">
-
-        <div class="cart-content">
-
-            <button id="close-cart" type="button">
-                ✕
-            </button>
-
-            <h2>
-                🛒 Mening savatim
-            </h2>
-
-            <div id="cart-items">
-                Savat hozircha bo‘sh.
-            </div>
-
-            <h3>
-                Jami:
-                <span id="cart-total">0 so'm</span>
-            </h3>
-
-            <button id="checkout-btn" type="button">
-                🛍️ Buyurtma berish
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- BUYURTMA -->
-
-    <div id="checkout-modal" class="cart-modal">
-
-        <div class="cart-content checkout-content">
-
-            <button id="close-checkout" type="button">
-                ×
-            </button>
-
-            <h2>
-                🛍️ Buyurtma berish
-            </h2>
-
-            <form id="checkout-form">
-
-                <label>
-                    Ismingiz
-                </label>
-
-                <input
-                    type="text"
-                    id="customer-name"
-                    placeholder="Ismingizni kiriting"
-                    required
-                >
-
-
-                <label>
-                    Telefon raqam
-                </label>
-
-                <input
-                    type="tel"
-                    id="customer-phone"
-                    placeholder="+998 90 123 45 67"
-                    required
-                >
-
-
-                <label>
-                    Manzil
-                </label>
-
-                <textarea
-                    id="customer-address"
-                    placeholder="Yetkazib berish manzili"
-                    required
-                ></textarea>
-
-
-                <label>
-                    To‘lov usuli
-                </label>
-
-                <select id="payment-method" required>
-
-                    <option value="">
-                        Tanlang
-                    </option>
-
-                    <option value="Naqd">
-                        Naqd pul
-                    </option>
-
-                    <option value="Karta">
-                        Bank kartasi
-                    </option>
-
-                    <option value="Payme">
-                        Payme
-                    </option>
-
-                    <option value="Click">
-                        Click
-                    </option>
-
-                </select>
-
-
-                <button
-                    type="submit"
-                    id="confirm-order"
-                >
-                    ✅ Buyurtmani tasdiqlash
-                </button>
-
-            </form>
-
-        </div>
 
     </div>
 
@@ -225,15 +105,187 @@
     </div>
 
 
+    <!-- KATEGORIYALAR -->
+
+    <div class="category-box">
+
+        <button
+            class="category-btn active"
+            data-category="all"
+            type="button"
+        >
+            Barchasi
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Elektronika"
+            type="button"
+        >
+            📱 Elektronika
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Kiyim"
+            type="button"
+        >
+            👕 Kiyim
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Aksessuar"
+            type="button"
+        >
+            🎧 Aksessuar
+        </button>
+
+        <button
+            class="category-btn"
+            data-category="Uy"
+            type="button"
+        >
+            🏠 Uy
+        </button>
+
+    </div>
+
+
     <!-- MAHSULOTLAR -->
 
     <div
         id="products-list"
         class="products-list"
-    >
-    </div>
+    ></div>
 
 </section>
+
+
+<!-- SAVAT MODAL -->
+
+<div id="cart-modal" class="cart-modal">
+
+    <div class="cart-content">
+
+        <button id="close-cart" type="button">
+            ✕
+        </button>
+
+        <h2>
+            🛒 Mening savatim
+        </h2>
+
+        <div id="cart-items">
+            Savat hozircha bo‘sh.
+        </div>
+
+        <h3>
+            Jami:
+            <span id="cart-total">0 so'm</span>
+        </h3>
+
+        <button id="checkout-btn" type="button">
+            🛍️ Buyurtma berish
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- BUYURTMA MODAL -->
+
+<div id="checkout-modal" class="cart-modal">
+
+    <div class="cart-content checkout-content">
+
+        <button id="close-checkout" type="button">
+            ×
+        </button>
+
+        <h2>
+            🛍️ Buyurtma berish
+        </h2>
+
+        <form id="checkout-form">
+
+            <label>
+                Ismingiz
+            </label>
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Ismingizni kiriting"
+                required
+            >
+
+
+            <label>
+                Telefon raqam
+            </label>
+
+            <input
+                type="tel"
+                id="customer-phone"
+                placeholder="+998 90 123 45 67"
+                required
+            >
+
+
+            <label>
+                Manzil
+            </label>
+
+            <textarea
+                id="customer-address"
+                placeholder="Yetkazib berish manzili"
+                required
+            ></textarea>
+
+
+            <label>
+                To‘lov usuli
+            </label>
+
+            <select id="payment-method" required>
+
+                <option value="">
+                    Tanlang
+                </option>
+
+                <option value="Naqd">
+                    Naqd pul
+                </option>
+
+                <option value="Karta">
+                    Bank kartasi
+                </option>
+
+                <option value="Payme">
+                    Payme
+                </option>
+
+                <option value="Click">
+                    Click
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                id="confirm-order"
+            >
+                ✅ Buyurtmani tasdiqlash
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 
 <!-- BIZ HAQIMIZDA -->
@@ -254,7 +306,6 @@
 
 
     <div class="features">
-
 
         <div class="feature">
 
@@ -305,7 +356,6 @@
             </p>
 
         </div>
-
 
     </div>
 
