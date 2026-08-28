@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QADAM Admin Panel</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     LOGIN
+========================= -->
+
+<div id="login-screen">
+
+    <div class="login-box">
+
+        <div class="login-logo">
+            <h1>QADAM</h1>
+            <span>ADMIN PANEL</span>
+        </div>
+
+        <p>Admin panelga kirish</p>
+
+        <input
+            type="text"
+            id="admin-username"
+            placeholder="Login"
+            autocomplete="username"
+        >
+
+        <input
+            type="password"
+            id="admin-password"
+            placeholder="Parol"
+            autocomplete="current-password"
+        >
+
+        <button
+            type="button"
+            id="admin-login-btn">
+            🔐 Kirish
+        </button>
+
+        <p id="login-error"></p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN PANEL
+========================= -->
+
+<div id="admin-panel">
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-brand">
+
+            <h1>QADAM</h1>
+
+            <span>Admin Panel</span>
+
+        </div>
+
+        <div class="header-actions">
+
+            <a href="../index.html">
+                🏠 Do‘konga qaytish
+            </a>
+
+            <button
+                id="logout-btn"
+                type="button">
+                🚪 Chiqish
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="admin-container">
+
+
+        <!-- =========================
+             STATISTIKA
+        ========================= -->
+
+        <section class="stats-section">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div>
+                    <h3 id="total-orders">0</h3>
+                    <p>Jami buyurtmalar</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💰
+                </div>
+
+                <div>
+                    <h3 id="total-sales">
+                        0 so‘m
+                    </h3>
+
+                    <p>Jami savdo</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🆕
+                </div>
+
+                <div>
+                    <h3 id="new-orders">
+                        0
+                    </h3>
+
+                    <p>Yangi buyurtmalar</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MAHSULOT QO‘SHISH
+        ========================= -->
+
+        <section class="admin-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>➕ Mahsulot qo‘shish</h2>
+
+                    <p>
+                        Do‘konga yangi mahsulot qo‘shing
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="product-form">
+
+                <label>
+                    Mahsulot nomi
+                </label>
+
+                <input
+                    type="text"
+                    id="product-name"
+                    placeholder="Masalan: iPhone 15"
+                    required
+                >
+
+
+                <label>
+                    Narxi
+                </label>
+
+                <input
+                    type="number"
+                    id="product-price"
+                    placeholder="8999900"
+                    min="0"
+                    required
+                >
+
+
+                <label>
+                    Kategoriya
+                </label>
+
+                <select id="product-category">
+
+                    <option value="Elektronika">
+                        📱 Elektronika
+                    </option>
+
+                    <option value="Kiyim">
+                        👕 Kiyim
+                    </option>
+
+                    <option value="Aksessuar">
+                        🎧 Aksessuar
+                    </option>
+
+                    <option value="Boshqa">
+                        📦 Boshqa
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Mahsulot rasmi URL
+                </label>
+
+                <input
+                    type="url"
+                    id="product-image"
+                    placeholder="https://..."
+                >
+
+
+                <button
+                    type="submit"
+                    class="add-button">
+
+                    ➕ Mahsulot qo‘shish
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             MAHSULOTLAR
+        ========================= -->
+
+        <section class="admin-card">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>🛍️ Mahsulotlar</h2>
+
+                    <p>
+                        Do‘kondagi mahsulotlarni boshqarish
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="product-search"
+                    placeholder="🔍 Mahsulot qidirish..."
+                >
+
+
+                <select id="product-filter">
+
+                    <option value="all">
+                        📦 Barcha kategoriyalar
+                    </option>
+
+                    <option value="Elektronika">
+                        📱 Elektronika
+                    </option>
+
+                    <option value="Kiyim">
+                        👕 Kiyim
+                    </option>
+
+                    <option value="Aksessuar">
+                        🎧 Aksessuar
+                    </option>
+
+                    <option value="Boshqa">
+                        📦 Boshqa
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div id="products-list">
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BUYURTMALAR
+        ========================= -->
+
+        <section class="orders-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h2>📦 Buyurtmalar</h2>
+
+                    <p>
+                        Saytdan kelgan buyurtmalarni boshqarish
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="export-orders-btn"
+                    type="button">
+
+                    📥 Excel/CSV
+
+                </button>
+
+            </div>
+
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="order-search"
+                    placeholder="🔍 Ism, telefon yoki ID..."
+                >
+
+
+                <select id="order-filter">
+
+                    <option value="all">
+                        📦 Barcha buyurtmalar
+                    </option>
+
+                    <option value="Yangi">
+                        🆕 Yangi
+                    </option>
+
+                    <option value="Qabul qilindi">
+                        ✅ Qabul qilindi
+                    </option>
+
+                    <option value="Yetkazilmoqda">
+                        🚚 Yetkazilmoqda
+                    </option>
+
+                    <option value="Yetkazildi">
+                        🎉 Yetkazildi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div id="orders-list">
+
+                Buyurtmalar yuklanmoqda...
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     EDIT PRODUCT MODAL
+========================= -->
+
+<div
+    id="edit-modal"
+    class="edit-modal">
+
+    <div class="edit-box">
+
+        <div class="edit-header">
+
+            <div>
+
+                <h2>
+                    ✏️ Mahsulotni tahrirlash
+                </h2>
+
+                <p>
+                    Mahsulot ma’lumotlarini o‘zgartiring
+                </p>
+
+            </div>
+
+
+            <button
+                id="close-edit"
+                type="button">
+
+                ✕
+
+            </button>
+
+        </div>
+
+
+        <form id="edit-form">
+
+            <input
+                type="hidden"
+                id="edit-id"
+            >
+
+
+            <label>
+                Mahsulot nomi
+            </label>
+
+            <input
+                type="text"
+                id="edit-name"
+                required
+            >
+
+
+            <label>
+                Narxi
+            </label>
+
+            <input
+                type="number"
+                id="edit-price"
+                min="0"
+                required
+            >
+
+
+            <label>
+                Kategoriya
+            </label>
+
+            <select id="edit-category">
+
+                <option value="Elektronika">
+                    📱 Elektronika
+                </option>
+
+                <option value="Kiyim">
+                    👕 Kiyim
+                </option>
+
+                <option value="Aksessuar">
+                    🎧 Aksessuar
+                </option>
+
+                <option value="Boshqa">
+                    📦 Boshqa
+                </option>
+
+            </select>
+
+
+            <label>
+                Mahsulot rasmi URL
+            </label>
+
+            <input
+                type="url"
+                id="edit-image"
+                placeholder="https://..."
+            >
+
+
+            <div class="edit-buttons">
+
+                <button
+                    type="button"
+                    id="close-edit-2">
+
+                    Bekor qilish
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save-edit">
+
+                    💾 Saqlash
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QADAM - Online Do'kon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <h1>QADAM</h1>
+        <span>ONLINE STORE</span>
+    </div>
+
+    <nav>
+        <a href="#home">Bosh sahifa</a>
+        <a href="#products">Mahsulotlar</a>
+        <a href="#about">Biz haqimizda</a>
+    </nav>
+
+    <a href="admin/index.html" class="admin-btn">
+        ⚙ Admin
+    </a>
+
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <span class="small-title">
+            QADAM ONLINE STORE
+        </span>
+
+        <h2>
+            Zamonaviy mahsulotlar
+            <br>
+            <strong>eng yaxshi narxlarda</strong>
+        </h2>
+
+        <p>
+            QADAM — sifatli va zamonaviy mahsulotlarni
+            qulay narxda xarid qilishingiz mumkin bo‘lgan online do‘kon.
+        </p>
+
+        <a href="#products" class="hero-btn">
+            Xarid qilish →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="products-section" id="products">
+
+    <div class="section-header">
+
+        <span>MAHSULOTLAR</span>
+
+        <h2>QADAM mahsulotlari</h2>
+
+        <p>
+            O‘zingizga kerakli mahsulotni tanlang
+        </p>
+
+    </div>
+
+
+    <div class="cart-box">
+
+        🛒 Savat:
+        <span id="cart-count">0</span> ta
+
+        <button id="open-cart" type="button">
+            Savatni ko‘rish
+        </button>
+
+    </div>
+
+
+    <!-- SAVAT -->
+
+    <div id="cart-modal" class="cart-modal">
+
+        <div class="cart-content">
+
+            <button id="close-cart" type="button">
+                ✕
+            </button>
+
+            <h2>
+                🛒 Mening savatim
+            </h2>
+
+            <div id="cart-items">
+                Savat hozircha bo‘sh.
+            </div>
+
+            <h3>
+                Jami:
+                <span id="cart-total">0</span> so‘m
+            </h3>
+
+            <button id="checkout-btn" type="button">
+                🛍️ Buyurtma berish
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUYURTMA FORMASI -->
+
+    <div id="checkout-modal" class="cart-modal">
+
+        <div class="cart-content checkout-content">
+
+            <button id="close-checkout" type="button">
+                ×
+            </button>
+
+            <h2>
+                🛍️ Buyurtma berish
+            </h2>
+
+            <form id="checkout-form">
+
+                <label>
+                    Ismingiz
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    placeholder="Ismingizni kiriting"
+                    required
+                >
+
+
+                <label>
+                    Telefon raqam
+                </label>
+
+                <input
+                    type="tel"
+                    id="customer-phone"
+                    placeholder="+998 90 123 45 67"
+                    required
+                >
+
+
+                <label>
+                    Manzil
+                </label>
+
+                <textarea
+                    id="customer-address"
+                    placeholder="Yetkazib berish manzili"
+                    required
+                ></textarea>
+
+
+                <label>
+                    To‘lov usuli
+                </label>
+
+                <select id="payment-method" required>
+
+                    <option value="">
+                        Tanlang
+                    </option>
+
+                    <option value="Naqd">
+                        Naqd pul
+                    </option>
+
+                    <option value="Karta">
+                        Bank kartasi
+                    </option>
+
+                    <option value="Payme">
+                        Payme
+                    </option>
+
+                    <option value="Click">
+                        Click
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="submit"
+                    id="confirm-order"
+                >
+                    ✅ Buyurtmani tasdiqlash
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAHSULOTLAR -->
+
+    <div
+        id="products-list"
+        class="products-list"
+    >
+    </div>
+
+</section>
+
+
+<!-- BIZ HAQIMIZDA -->
+
+<section class="about" id="about">
+
+    <div>
+
+        <span>
+            NEGA QADAM?
+        </span>
+
+        <h2>
+            Siz uchun qulay xarid
+        </h2>
+
+    </div>
+
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="icon">
+                🚚
+            </div>
+
+            <h3>
+                Tez yetkazib berish
+            </h3>
+
+            <p>
+                Buyurtmalaringizni tez va ishonchli yetkazamiz.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                💳
+            </div>
+
+            <h3>
+                Qulay to‘lov
+            </h3>
+
+            <p>
+                Siz uchun qulay to‘lov usullaridan foydalaning.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="icon">
+                ⭐
+            </div>
+
+            <h3>
+                Sifatli mahsulot
+            </h3>
+
+            <p>
+                Faqat sifatli va zamonaviy mahsulotlar.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+
+        <h2>
+            QADAM
+        </h2>
+
+        <p>
+            Zamonaviy online do‘kon
+        </p>
+
+    </div>
+
+    <p>
+        © 2026 QADAM. Barcha huquqlar himoyalangan.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
