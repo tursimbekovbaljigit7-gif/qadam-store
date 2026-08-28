@@ -1,6 +1,6 @@
+```html
 <!DOCTYPE html>
 <html lang="uz">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +12,7 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
@@ -36,9 +34,7 @@
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
@@ -69,9 +65,7 @@
 </section>
 
 
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- ================= MAHSULOTLAR ================= -->
 
 <section class="products-section" id="products">
 
@@ -104,7 +98,7 @@
     </div>
 
 
-    <!-- QIDIRUV -->
+    <!-- ================= QIDIRUV ================= -->
 
     <div class="search-box">
 
@@ -117,46 +111,46 @@
     </div>
 
 
-    <!-- KATEGORIYALAR -->
+    <!-- ================= KATEGORIYALAR ================= -->
 
     <div class="category-box">
 
         <button
-            type="button"
             class="category-btn active"
             data-category="all"
+            type="button"
         >
             Barchasi
         </button>
 
         <button
-            type="button"
             class="category-btn"
             data-category="Elektronika"
+            type="button"
         >
             📱 Elektronika
         </button>
 
         <button
-            type="button"
             class="category-btn"
             data-category="Kiyim"
+            type="button"
         >
             👕 Kiyim
         </button>
 
         <button
-            type="button"
             class="category-btn"
             data-category="Aksessuar"
+            type="button"
         >
             🎧 Aksessuar
         </button>
 
         <button
-            type="button"
             class="category-btn"
             data-category="Uy"
+            type="button"
         >
             🏠 Uy
         </button>
@@ -164,30 +158,25 @@
     </div>
 
 
-    <!-- MAHSULOTLAR -->
+    <!-- ================= MAHSULOTLAR ================= -->
 
     <div
         id="products-list"
         class="products-list"
-    ></div>
+    >
+    </div>
 
 </section>
 
 
-<!-- =========================
-     SAVAT MODAL
-========================= -->
+<!-- ================= SAVAT MODAL ================= -->
 
-<div
-    id="cart-modal"
-    class="modal"
->
+<div id="cart-modal" class="cart-modal">
 
-    <div class="modal-content">
+    <div class="cart-content">
 
         <button
             id="close-cart"
-            class="close-btn"
             type="button"
         >
             ✕
@@ -197,23 +186,19 @@
             🛒 Mening savatim
         </h2>
 
-        <div id="cart-items"></div>
+        <div id="cart-items">
+            🛒 Savat hozircha bo‘sh.
+        </div>
 
-        <div class="cart-total-box">
-
-            <strong>
-                Jami:
-            </strong>
-
+        <h3>
+            Jami:
             <span id="cart-total">
                 0 so'm
             </span>
-
-        </div>
+        </h3>
 
         <button
             id="checkout-btn"
-            class="main-btn"
             type="button"
         >
             🛍️ Buyurtma berish
@@ -224,78 +209,20 @@
 </div>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
-
-<div
-    id="product-modal"
-    class="modal"
->
-
-    <div class="product-modal-content">
-
-        <button
-            id="close-product-modal"
-            class="close-btn"
-            type="button"
-        >
-            ✕
-        </button>
-
-        <img
-            id="modal-product-image"
-            src=""
-            alt="Mahsulot"
-        >
-
-        <div class="modal-product-info">
-
-            <span id="modal-product-category">
-            </span>
-
-            <h2 id="modal-product-name">
-            </h2>
-
-            <p id="modal-product-price">
-            </p>
-
-            <p id="modal-product-description">
-                Sifatli va zamonaviy mahsulot.
-            </p>
-
-            <button
-                id="modal-add-cart"
-                class="main-btn"
-                type="button"
-            >
-                🛒 Savatga qo‘shish
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     CHECKOUT MODAL
-========================= -->
+<!-- ================= BUYURTMA ================= -->
 
 <div
     id="checkout-modal"
-    class="modal"
+    class="cart-modal"
 >
 
-    <div class="modal-content checkout-content">
+    <div class="cart-content checkout-content">
 
         <button
             id="close-checkout"
-            class="close-btn"
             type="button"
         >
-            ✕
+            ×
         </button>
 
         <h2>
@@ -374,7 +301,6 @@
             <button
                 type="submit"
                 id="confirm-order"
-                class="main-btn"
             >
                 ✅ Buyurtmani tasdiqlash
             </button>
@@ -386,11 +312,36 @@
 </div>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ================= BATAFSIL MAHSULOT ================= -->
 
-<section class="about" id="about">
+<div
+    id="product-modal"
+    class="cart-modal"
+>
+
+    <div class="cart-content product-modal-content">
+
+        <button
+            id="close-product"
+            type="button"
+        >
+            ✕
+        </button>
+
+        <div id="product-details">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about"
+    id="about"
+>
 
     <div>
 
@@ -406,6 +357,7 @@
 
 
     <div class="features">
+
 
         <div class="feature">
 
@@ -464,9 +416,7 @@
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -489,7 +439,10 @@
 </footer>
 
 
+<!-- ================= SCRIPT ================= -->
+
 <script src="script.js"></script>
 
 </body>
 </html>
+```
